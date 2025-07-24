@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "mountain",
+	theme = "catppuccin",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -14,11 +14,11 @@ M.base46 = {
 	-- },
 }
 
--- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
---}
+ M.nvdash = { load_on_startup = true }
+ M.ui = {
+       tabufline = {
+          lazyload = true
+      }
+ }
 
 return M
