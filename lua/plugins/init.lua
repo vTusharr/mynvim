@@ -9,15 +9,31 @@ return {
   -- These are some examples, uncomment them if you want to see them work!
   {
   "williamboman/mason.nvim",
-    opts ={
-     ensure_installed={
+    opts = {
+      ensure_installed = {
+        -- C/C++
         "clangd",
+        "clang-format",
+
+        -- Python
         "pyrefly",
-        "ruff"
-      } 
-    }
+        "ruff",         -- Linter, Formatter, and Language Server for Python
+
+        -- Assembly
+        "asmfmt",       -- Formatter for Assembly
+        "asm-lsp",
+
+        -- Web
+        "html-lsp",
+        "css-lsp",
+      },
+    },
   },
 
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+  },
 
   {
     "neovim/nvim-lspconfig",
@@ -30,12 +46,12 @@ return {
    { import = "nvchad.blink.lazyspec" },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
-  	},
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+          ensure_installed = {
+              "vim", "lua", "vimdoc",
+        "html", "css", "python", "c", "cpp", "bash", "asm"
+          },
+      },
   },
 }
